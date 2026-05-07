@@ -29,7 +29,7 @@ app.get('/health', (req, res) => {
 // ── Serve frontend ──────────────────────────────────────────────────────────
 app.get('/', (req, res) => {
   res.json({
-    message: 'TaskFlow Backend API Running'
+    message: 'TaskFlow Backend Running'
   });
 });
 
