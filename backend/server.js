@@ -21,8 +21,6 @@ app.get('/health', (req, res) => {
   });
 });
 
-const path = require('path');
-
 const FRONTEND = path.join(__dirname, 'public');
 
 app.use(express.static(FRONTEND));
