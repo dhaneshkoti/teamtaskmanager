@@ -27,12 +27,10 @@ app.get('/health', (req, res) => {
 });
 
 // ── Serve frontend ──────────────────────────────────────────────────────────
-const FRONTEND = path.join(__dirname, '..', 'frontend');
-
-app.use(express.static(FRONTEND));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(FRONTEND, 'index.html'));
+app.get('/', (req, res) => {
+  res.json({
+    message: 'TaskFlow Backend API Running'
+  });
 });
 
 // ── Global error handler ────────────────────────────────────────────────────
