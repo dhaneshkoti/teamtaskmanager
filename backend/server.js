@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const { initDB } = require('./db');
@@ -20,10 +21,14 @@ app.get('/health', (req, res) => {
   });
 });
 
-app.get('/', (req, res) => {
-  res.json({
-    message: 'TaskFlow Backend Running'
-  });
+const path = require('path');
+
+const FRONTEND = path.join(__dirname, 'public');
+
+app.use(express.static(FRONTEND));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(FRONTEND, 'index.html'));
 });
 
 app.use((err, req, res, next) => {
