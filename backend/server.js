@@ -4,7 +4,7 @@ const path = require('path');
 const { initDB } = require('./db');
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
 
 // ── Middleware ──────────────────────────────────────────────────────────────
 app.use(cors());
